@@ -28,9 +28,36 @@
 	</BR></BR>
 	<div class="formulario">
 		<form name="tipoCadastro" action="cadastro.php" method="POST">
-			<input type="radio" name="cadastro" value="fisica"/> Cliente físico
-		    <input type="radio" name="cadastro" value="juridica"/> Cliente jurídico
-		    <input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 
+		if (isset($_POST['enviar'])){
+			$rb = $_POST['cadastro'];
+			if ($rb == "fisica") {
+?>
+				<input type="radio" name="cadastro" value="fisica" checked="checked" /> Cliente físico
+				<input type="radio" name="cadastro" value="juridica"/> Cliente jurídico
+				<input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 
+			} else if ($rb == "juridica") {
+?>
+				<input type="radio" name="cadastro" value="fisica" /> Cliente físico
+				<input type="radio" name="cadastro" value="juridica" checked="checked" /> Cliente jurídico
+				<input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 
+			} else if ($rb == "locadora") {
+?>
+				<input type="radio" name="cadastro" value="fisica" /> Cliente físico
+				<input type="radio" name="cadastro" value="juridica" /> Cliente jurídico
+				<input type="radio" name="cadastro" value="locadora" checked="checked" /> Locadora
+<?php 
+			}
+		} else {
+?>
+			<input type="radio" name="cadastro" value="fisica" /> Cliente físico
+			<input type="radio" name="cadastro" value="juridica"/> Cliente jurídico
+			<input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 			
+		}
+?>
 			<button name="enviar" class="enviar" type="submit">Selecionar</button>
 		</form>
 	</div>
