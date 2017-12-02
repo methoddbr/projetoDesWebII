@@ -28,9 +28,36 @@
 	</BR></BR>
 	<div class="formulario">
 		<form name="tipoCadastro" action="cadastro.php" method="POST">
-			<input type="radio" name="cadastro" value="fisica"/> Cliente físico
-		    <input type="radio" name="cadastro" value="juridica"/> Cliente jurídico
-		    <input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 
+		if (isset($_POST['enviar'])){
+			$rb = $_POST['cadastro'];
+			if ($rb == "fisica") {
+?>
+				<input type="radio" name="cadastro" value="fisica" checked="checked" /> Cliente físico
+				<input type="radio" name="cadastro" value="juridica"/> Cliente jurídico
+				<input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 
+			} else if ($rb == "juridica") {
+?>
+				<input type="radio" name="cadastro" value="fisica" /> Cliente físico
+				<input type="radio" name="cadastro" value="juridica" checked="checked" /> Cliente jurídico
+				<input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 
+			} else if ($rb == "locadora") {
+?>
+				<input type="radio" name="cadastro" value="fisica" /> Cliente físico
+				<input type="radio" name="cadastro" value="juridica" /> Cliente jurídico
+				<input type="radio" name="cadastro" value="locadora" checked="checked" /> Locadora
+<?php 
+			}
+		} else {
+?>
+			<input type="radio" name="cadastro" value="fisica" /> Cliente físico
+			<input type="radio" name="cadastro" value="juridica"/> Cliente jurídico
+			<input type="radio" name="cadastro" value="locadora"/> Locadora
+<?php 			
+		}
+?>
 			<button name="enviar" class="enviar" type="submit">Selecionar</button>
 		</form>
 	</div>
@@ -97,10 +124,10 @@
 		}
 		else if ($rb == "locadora") {
 ?>
-			<form name="cadastroLocadora" action="cadastro.php" method="POST">
+			<form name="cadastroLocadora" action="../control/cadastroLocadora.php" method="POST">
 				</br></br>
 				<label for="nome">Razão social:</label>
-				<input id="nome" type="text" name="nome" autofocus required size="20">
+				<input id="nome" type="text" name="nomeLocadora" autofocus required size="20">
 				</br></br>
 				<label for="cnpj">CNPJ:</label>
 				<input id="cnpj" type="text" name="cnpj">
@@ -114,11 +141,21 @@
 				</br></br>
 				<label for="telefone">Telefone:</label>
 				<input id="telefone" type="text" name="telefone">
-				<select>
-					<option value="c1">Cidade 1</option>
-					<option value="c2">Cidade 2</option>
-					<option value="c3">Cidade 3</option>
-					<option value="c4">Cidade 4</option>
+				<?php
+					include("conexaoDB.php");
+					$query = "SELECT id_cidade, descricao FROM cidade";
+					$executar = mysqli_query($conn, $query);
+
+					?>
+
+				<select name="id_cidade">
+					<?php
+					 	while($cidade = mysqli_fetch_array($executar)) { 
+					?>
+ 							<option value="<?php echo $cidade['id_cidade'] ?>"> 
+ 						<?php echo $cidade['descricao'] ?></option>
+ 					<?php } ?>
+
 				</select>
 				</br></br>
 				<label for="endereco">Endereço:</label>
