@@ -124,7 +124,7 @@
 		}
 		else if ($rb == "locadora") {
 ?>
-			<form name="cadastroLocadora" action="../cadastroLocadora.php" method="POST">
+			<form name="cadastroLocadora" action="../control/cadastroLocadora.php" method="POST">
 				</br></br>
 				<label for="nome">Razão social:</label>
 				<input id="nome" type="text" name="nomeLocadora" autofocus required size="20">
