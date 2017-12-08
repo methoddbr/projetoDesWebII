@@ -21,7 +21,7 @@
 		}
 	}
 
-	$consultar2 = "select F.email, F.senha, L.nome from filial F inner join locadora L on F.id_locadora = L.id_locadora";
+	$consultar2 = "select email, senha, nome from locadora";
 	$executar2 = mysqli_query($conn, $consultar2);
 
 	while ($linha = mysqli_fetch_array($executar2, MYSQLI_BOTH)) {
