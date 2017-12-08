@@ -80,6 +80,8 @@ CREATE TABLE Cidade (
 CREATE TABLE Locadora (
 	id_locadora INTEGER NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	senha VARCHAR(15) NOT NULL,
 	PRIMARY KEY (id_locadora)
 );
 
@@ -89,8 +91,6 @@ CREATE TABLE Filial (
 	id_cidade INTEGER NOT NULL,
 	cnpj VARCHAR(17) NOT NULL,
 	ie VARCHAR(15) NOT NULL,
-	email VARCHAR(30) NOT NULL,
-	senha VARCHAR(15) NOT NULL,
 	telefone VARCHAR(15) NOT NULL,
 	endereco VARCHAR(60) NOT NULL,
 	PRIMARY KEY (id_filial),
