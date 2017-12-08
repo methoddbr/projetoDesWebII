@@ -1,4 +1,4 @@
-<?php include ("control/conexao.php"); ?>	
+<?php include ("model/conexao.php"); ?>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php include ("view/menuIndex.php"); ?>
-	<form action="busca.php" method="POST">
+	<form action="view/busca.php" method="POST">
 		<label for="busca">Buscar:</label>
 		<input id="busca" type="text" name="busca" autofocus required size="30">
 		<button  name="enviar" class="enviar" type="submit">Buscar</button>

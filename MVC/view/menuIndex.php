@@ -3,8 +3,8 @@
 	session_start();
 	if (!isset($_SESSION["logado"]) || $_SESSION["logado"] != TRUE) {
 ?>
-		[ <a href="pages/login.php">Login</a>
-		<a href="pages/cadastro.php">Cadastro</a> ]
+		[ <a href="view/login.php">Login</a>
+		<a href="view/cadastro.php">Cadastro</a> ]
 <?php 
 	}
 	else {

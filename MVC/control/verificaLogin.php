@@ -1,5 +1,5 @@
 <?php 
-	include ("conexao.php");
+	include ("../model/conexao.php");
 	session_start();
 
 	$user = $_POST['user'];
@@ -37,6 +37,6 @@
 	}
 
 	if (!$encontrou) {
-		header('Location: ../pages/login.php');
+		header('Location: ../view/login.php');
 	}
 ?>

@@ -1,0 +1,16 @@
+﻿******* Desenvolvimento Web II - IFRS  *********
+			  Campus Osório/RS
+
+Estrutura das pastas:
+
+Projeto--|
+		|-index.php
+		 
+		|-Model--|
+
+		|-View--|
+
+		|-Control--|
+
+
+*************************************************

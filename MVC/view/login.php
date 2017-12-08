@@ -1,4 +1,4 @@
-<?php include ("../control/conexao.php"); ?>	
+<?php include ("../model/conexao.php"); ?>	
 <!DOCTYPE html>
 <html>
 <head>

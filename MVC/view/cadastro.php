@@ -1,4 +1,4 @@
-<?php include ("../control/conexao.php"); ?>	
+<?php include ("../model/conexao.php"); ?>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +9,12 @@
 ?>
 			<title>Motor - cadastro cliente</title>
 <?php  
-		}
-		else {		
+		} else {		
 ?>
 			<title>Motor - cadastro locadora</title>
 <?php
 		}
-	}
-	else {	
+	} else {	
 ?>
 		<title>Motor - cadastro</title>
 <?php			
@@ -124,7 +122,7 @@
 		}
 		else if ($rb == "locadora") {
 ?>
-			<form name="cadastroLocadora" action="../control/cadastroLocadora.php" method="POST">
+			<form name="cadastroLocadora" action="../model/cadastroLocadora.php" method="POST">
 				</br></br>
 				<label for="nome">Razão social:</label>
 				<input id="nome" type="text" name="nomeLocadora" autofocus required size="20">
@@ -141,23 +139,25 @@
 				</br></br>
 				<label for="telefone">Telefone:</label>
 				<input id="telefone" type="text" name="telefone">
+
 				<?php
-					include("conexaoDB.php");
 					$query = "SELECT id_cidade, descricao FROM cidade";
 					$executar = mysqli_query($conn, $query);
-
-					?>
+				?>
 
 				<select name="id_cidade">
 					<?php
 					 	while($cidade = mysqli_fetch_array($executar)) { 
 					?>
  							<option value="<?php echo $cidade['id_cidade'] ?>"> 
- 						<?php echo $cidade['descricao'] ?></option>
- 					<?php } ?>
-
+ 								<?php echo $cidade['descricao'] ?>
+ 							</option>
+ 					<?php 
+ 						} 
+ 					?>
 				</select>
 				</br></br>
+
 				<label for="endereco">Endereço:</label>
 				<input id="endereco" type="text" name="endereco">
 				</br></br>
