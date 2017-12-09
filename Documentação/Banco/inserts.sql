@@ -12,10 +12,10 @@ insert into pessoa_fisica (id_cliente, sobrenome, cpf, habilitacao, dt_nasciment
 insert into cliente (nome, email, senha, telefone) values ('Empresa 01', 'empresa01@a.com', '4321', '222222222');
 insert into pessoa_juridica (id_cliente, cnpj, ie) values ('2', '2222222-22', '2222');
 
-insert into cidade (uf, descricao) values ('RS', 'Osório');
-insert into cidade (uf, descricao) values ('RS', 'Tramandaí');
-insert into cidade (uf, descricao) values ('RS', 'Imbé');
-insert into cidade (uf, descricao) values ('RS', 'Xangrilá');
+insert into cidade (uf, descricao) values ('RS', 'Osorio');
+insert into cidade (uf, descricao) values ('RS', 'Tramandai');
+insert into cidade (uf, descricao) values ('RS', 'Imbe');
+insert into cidade (uf, descricao) values ('RS', 'Xangrila');
 
 insert into locadora (nome, email, senha) values ('Locadora 01', 'locadora01@a.com', '4321');
 insert into filial (id_locadora, id_cidade, cnpj, ie, telefone, endereco) values ('1', '1', '111111-11', '111', '(11)1111-1111', 'dasdasdadas');
