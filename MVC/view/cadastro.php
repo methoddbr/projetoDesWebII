@@ -67,38 +67,39 @@
 		$rb = $_POST['cadastro'];
 		if ($rb == "fisica") {
 ?>
-			<form name="cadastroFisico" action="cadastro.php" method="POST">
+			<form name="cadastroFisico" action="../model/cadastroFisico.php" method="POST">
 				</br></br>
 				<label for="nome">Nome:</label>
-				<input id="nome" type="text" name="nome" autofocus required size="20">
+				<input id="nome" type="text" name="nome" autofocus required size="30">
 				<label for="sobrenome"> Sobrenome:</label>
-				<input id="sobrenome" type="text" name="sobrenome">
+				<input id="sobrenome" type="text" name="sobrenome" autofocus required size="30">
 				</br></br>
 				<label for="cpf">CPF:</label>
-				<input id="cpf" type="text" name="cpf">
+				<input id="cpf" type="text" name="cpf" autofocus required pattern="^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$">
 				<label for="habilitacao">Habilitacao:</label>
-				<input id="habilitacao" type="text" name="habilitacao">
+				<input id="habilitacao" type="text" name="habilitacao" autofocus required pattern="[^a-z][0-9]{10}$">
 				</br></br>
 				<label for="email">Email:</label>
-				<input id="email" type="text" name="email">
+				<input id="email" type="email" name="email" autofocus required>
 				<label for="senha">Senha:</label>
-				<input id="senha" type="password" name="senha">
+				<input id="senha" type="password" name="senha" autofocus required size="15">
 				</br></br>
 				<label for="telefone">Telefone:</label>
-				<input id="telefone" type="text" name="telefone">
+				<input id="telefone" type="text" name="telefone" autofocus required pattern="^\(?\d{2}\)?[\s-]?[\s9]?\d{4}-?\d{4}$">
 				<label for="dtNascimento">Data Nascimento:</label>
-				<input id="dtNascimento" type="text" name="dtNascimento">
+				<input id="dtNascimento" type="text" name="dtNascimento" autofocus required pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
 				</br></br>
-				<input type="radio" name="sexo" value="M"/> Masculino
-			    <input type="radio" name="sexo" value="F"/> Feminino
+				<input type="radio" name="sexo" value="M" required="required" /> Masculino
+			    <input type="radio" name="sexo" value="F" required="required" /> Feminino
 				</br></br>
 				<button name="cadastrar" class="enviar" type="submit">Cadastrar</button>
+
 			</form>
 <?php 
 		}
 		else if ($rb == "juridica") {
 ?>
-			<form name="cadastroJuridico" action="cadastro.php" method="POST">
+			<form name="cadastroJuridico" action="../model/cadastroJuridico.php" method="POST">
 				</br></br>
 				<label for="nome">Razão social:</label>
 				<input id="nome" type="text" name="nome" autofocus required size="20">

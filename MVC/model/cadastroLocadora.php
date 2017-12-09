@@ -16,6 +16,7 @@
 	$idLocadora = "SELECT id_locadora from locadora where nome = '$nomeLocadora'";
 	$executar = mysqli_query($conn, $idLocadora);
 
+
 	$linha = mysqli_fetch_array($executar, MYSQLI_BOTH);
 		$id = $linha[0];
 
