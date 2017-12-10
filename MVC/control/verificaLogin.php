@@ -17,7 +17,12 @@
 			$_SESSION["logado"] = TRUE;
 			$_SESSION["locadora"] = false;
 			$_SESSION["user"] = $linha[2];
-			header('Location: ../index.php');
+			$pg = $_SESSION["pagina"];
+			if (isset($_SESSION["pagina"])) {
+				header("Location: ../view/$pg");
+			} else {
+				header('Location: ../index.php');
+			}
 		}
 	}
 
@@ -32,7 +37,12 @@
 			$_SESSION["logado"] = TRUE;
 			$_SESSION["locadora"] = true;
 			$_SESSION["user"] = $linha[2];
-			header('Location: ../index.php');
+			$pg = $_SESSION["pagina"];
+			if (isset($_SESSION["pagina"])) {
+				header("Location: ../view/$pg");
+			} else {
+				header('Location: ../index.php');
+			}
 		}
 	}
 

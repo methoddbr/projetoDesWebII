@@ -52,7 +52,7 @@
 	<input type="checkbox" <?php if ($aAutomatico){ ?> checked="checked" <?php } ?> disabled >Câmbio automático</input></br></br>
 	<p><?php echo $moModelo . " " . $vCor . " " . $moAno . ", motor " . $moMotor . ", " . $vKm . "km, " . $moNrPortas . " portas, " . $tTipo . " com capacidade de " . $tCapacidade . "L para transporte, por R$" . $vValor . " a diária.</br> Em " . $cCidade . " - " . $cUf . ", na locadora de veículos " . $lNome ?></p></br>
 	<form action="reserva.php" method="POST">
-		<button name="reserva" class="enviar" type="submit" <?php if (!isset($_SESSION["logado"]) || $_SESSION["locadora"]){ ?> disabled <?php } ?> >Reservar</button>
+		<button name="reserva" class="enviar" type="submit" <?php if (!isset($_SESSION["logado"]) || $_SESSION["locadora"]){ $_SESSION["pagina"] = "veiculo.php?id=$vChassi"; ?> disabled <?php } ?> >Reservar</button>
 	</form>
 	<p style="font-size: 10px;">Faça seu login para efetuar a reserva deste veículo.</p>
 </body>
