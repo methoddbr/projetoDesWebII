@@ -19,7 +19,7 @@
 			$_SESSION["user"] = $linha[2];
 			$pg = $_SESSION["pagina"];
 			if (isset($_SESSION["pagina"])) {
-				header("Location: ../view/$pg");
+				header("Location: $pg");
 			} else {
 				header('Location: ../index.php');
 			}
@@ -39,7 +39,7 @@
 			$_SESSION["user"] = $linha[2];
 			$pg = $_SESSION["pagina"];
 			if (isset($_SESSION["pagina"])) {
-				header("Location: ../view/$pg");
+				header("Location: $pg");
 			} else {
 				header('Location: ../index.php');
 			}

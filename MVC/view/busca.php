@@ -18,9 +18,10 @@
 			<td>LOCADORA</td>
 			<td>CIDADE</td>
 		</tr>
-	<?php 
-		$busca = $_POST["busca"];
-		$consultar = "select MO.descricao, MA.descricao, V.cor, MO.ano, MO.motor, T.tipo, L.nome, C.descricao 
+	<?php  
+		$busca = $_GET["busca"];
+		$_SESSION["pagina"] = "../view/busca.php?busca=$busca";
+		$consultar = "select MO.descricao, MA.descricao, V.cor, MO.ano, MO.motor, T.tipo, L.nome, C.descricao, V.chassi
 					  	from veiculo V inner join modelo MO on V.id_modelo = MO.id_modelo 
 							inner join marca MA on MO.id_marca = MA.id_marca
 							inner join tipo T on MO.id_tipo = T.id_tipo
@@ -31,7 +32,7 @@
 		$executar = mysqli_query($conn, $consultar);
 		if (mysqli_num_rows($executar) == 0) {
 			echo "Não há registro compatível com a busca realizada!";
-			$consultar = "select MO.descricao, MA.descricao, V.cor, MO.ano, MO.motor, T.tipo, L.nome, C.descricao 
+			$consultar = "select MO.descricao, MA.descricao, V.cor, MO.ano, MO.motor, T.tipo, L.nome, C.descricao, V.chassi
 					  	from veiculo V inner join modelo MO on V.id_modelo = MO.id_modelo 
 							inner join marca MA on MO.id_marca = MA.id_marca
 							inner join tipo T on MO.id_tipo = T.id_tipo
@@ -49,9 +50,10 @@
 			$tipo = $linha[5];
 			$locadora = $linha[6];
 			$cidade = $linha[7];
+			$chassi = $linha[8];
 	?>
 			<tr align = "center" >
-				<td><a href="veiculo.php"><?php echo $modelo; ?></a></td>
+				<td><a href="veiculo.php?id=<?php echo $chassi; ?>"><?php echo $modelo; ?></a></td>
 				<td><?php echo $marca; ?></td>
 				<td><?php echo $cor; ?></td>
 				<td><?php echo $ano; ?></td>

@@ -6,8 +6,11 @@
 	<title>Motor - index</title>
 </head>
 <body>
-	<?php include ("view/menuIndex.php"); ?>
-	<form action="view/busca.php" method="POST">
+	<?php 
+		include ("view/menuIndex.php"); 
+		$_SESSION["pagina"] = "../index.php";
+	?>
+	<form action="view/busca.php" method="GET">
 		<label for="busca">Buscar:</label>
 		<input id="busca" type="text" name="busca" size="30">
 		<button  name="enviar" class="enviar" type="submit">Buscar</button>
