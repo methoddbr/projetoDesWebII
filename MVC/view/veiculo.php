@@ -9,7 +9,7 @@
 	<?php 
 		include ("menu.php"); 
 		$chassi = $_GET["id"];
-		$consultar = "select A.gps, A.ar, A.radio, A.camera, A.sensor, A.direcao, A.automatico, MO.descricao, MO.ano, MO.motor, MO.nr_portas, MA.descricao, T.tipo, T.capacidade, V.chassi, V.km, V.cor, V.valor, L.nome, C.descricao, C.uf
+		$consultar = "select A.gps, A.ar, A.radio, A.camera, A.sensor, A.direcao, A.automatico, MO.descricao, MO.ano, MO.motor, MO.nr_portas, MA.descricao, T.tipo, T.capacidade, V.chassi, V.km, V.cor, V.valor, L.nome, C.descricao, C.uf, F.nome
 					  	from veiculo V inner join modelo MO on V.id_modelo = MO.id_modelo 
 							inner join marca MA on MO.id_marca = MA.id_marca
 							inner join tipo T on MO.id_tipo = T.id_tipo
@@ -41,6 +41,7 @@
 		$lNome = $linha[18];
 		$cCidade = $linha[19];
 		$cUf = $linha[20];
+		$fNome = $linha[21];
 	?>
 	<h2><?php echo $moModelo . " " . $maMarca ?></h2>
 	<input type="checkbox" <?php if ($aGps){ ?> checked="checked" <?php } ?> disabled >GPS</input></br>
@@ -50,7 +51,7 @@
 	<input type="checkbox" <?php if ($aSensor){ ?> checked="checked" <?php } ?> disabled >Sensor estacionamento</input></br>
 	<input type="checkbox" <?php if ($aDirecao){ ?> checked="checked" <?php } ?> disabled >Direção Hidráulica</input></br>
 	<input type="checkbox" <?php if ($aAutomatico){ ?> checked="checked" <?php } ?> disabled >Câmbio automático</input></br></br>
-	<p><?php echo $moModelo . " " . $vCor . " " . $moAno . ", motor " . $moMotor . ", " . $vKm . "km, " . $moNrPortas . " portas, " . $tTipo . " com capacidade de " . $tCapacidade . "L para transporte, por R$" . $vValor . " a diária.</br> Em " . $cCidade . " - " . $cUf . ", na locadora de veículos " . $lNome ?></p></br>
+	<p><?php echo $moModelo . " " . $vCor . " " . $moAno . ", motor " . $moMotor . ", " . $vKm . "km, " . $moNrPortas . " portas, " . $tTipo . " com capacidade de " . $tCapacidade . "L para transporte, por R$" . $vValor . " a diária.</br> Em " . $cCidade . " - " . $cUf . ", na filial " . $fNome . " da locadora de veículos " . $lNome ?></p></br>
 	<form action="reserva.php" method="POST">
 		<button name="reserva" class="enviar" type="submit" <?php if (!isset($_SESSION["logado"]) || $_SESSION["locadora"]){ $_SESSION["pagina"] = "../view/veiculo.php?id=$vChassi"; ?> disabled <?php } ?> >Reservar</button>
 	</form>

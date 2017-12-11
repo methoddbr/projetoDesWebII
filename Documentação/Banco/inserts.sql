@@ -22,33 +22,37 @@ insert into acessorios (gps, ar, radio, camera, sensor, direcao, automatico) val
 insert into acessorios (gps, ar, radio, camera, sensor, direcao, automatico) values (false, true, true, false, false, false, false);
 insert into acessorios (gps, ar, radio, camera, sensor, direcao, automatico) values (false, true, true, false, true, true, false);
 
-/* Inserts VEICULO */
-INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor) VALUES ('AAA111AAA111', '1', '1', '1', 'AAA-1111', '167000', 'PRATA', '', '70.00');
-INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor) VALUES ('BBB222BBB222', '1', '2', '1', 'BBB-2222', '127000', 'VERMELHO', '', '75.00');
-INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor) VALUES ('CCC333CCC333', '1', '6', '2', 'CCC-3333', '35000', 'BRANCO', '', '85.00');
-INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor) VALUES ('AAA222AAA222', '2', '1', '1', 'AAA-2222', '167000', 'PRATA', '', '70.00');
-INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor) VALUES ('BBB333BBB333', '2', '2', '1', 'BBB-3333', '127000', 'VERMELHO', '', '75.00');
-INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor) VALUES ('CCC444CCC444', '3', '6', '2', 'CCC-4444', '35000', 'BRANCO', '', '85.00');
-
-
-
-
-
-/* Inserts para TESTE */
-insert into cliente (nome, email, senha, telefone) values ('Roger', 'roger@a.com', '1234', '12345678');
-insert into pessoa_fisica (id_cliente, sobrenome, cpf, habilitacao, dt_nascimento, sexo) values ('1', 'Cascaes', '11111111', '12345678910', '14-04-1994', 'M');
-
-insert into cliente (nome, email, senha, telefone) values ('Empresa 01', 'empresa01@a.com', '4321', '222222222');
-insert into pessoa_juridica (id_cliente, cnpj, ie) values ('2', '2222222-22', '2222');
-
+/* Inserts CIDADE */
 insert into cidade (uf, descricao) values ('RS', 'Osorio');
 insert into cidade (uf, descricao) values ('RS', 'Tramandai');
 insert into cidade (uf, descricao) values ('RS', 'Imbe');
 insert into cidade (uf, descricao) values ('RS', 'Xangrila');
 
+/* Inserts LOCADORA */
 insert into locadora (nome, email, senha) values ('Locadora 01', 'locadora01@a.com', '4321');
 insert into locadora (nome, email, senha) values ('Locadora 02', 'locadora02@a.com', '4321');
 insert into locadora (nome, email, senha) values ('Locadora 03', 'locadora03@a.com', '4321');
-insert into filial (id_locadora, id_cidade, cnpj, ie, telefone, endereco) values ('1', '1', '111111-11', '111', '(11)1111-1111', 'dasdasdadas');
-insert into filial (id_locadora, id_cidade, cnpj, ie, telefone, endereco) values ('2', '2', '222222-22', '222', '(22)2222-2222', 'bbbbbbb');
-insert into filial (id_locadora, id_cidade, cnpj, ie, telefone, endereco) values ('3', '3', '333333-33', '333', '(33)3333-3333', 'cccccccccc');
+
+/* Inserts FILIAL */
+insert into filial (id_locadora, id_cidade, nome, cnpj, ie, telefone, endereco, ativa) values ('1', '1', 'Filial 01', '111111-11', '111', '(11)1111-1111', 'dasdasdadas', true);
+insert into filial (id_locadora, id_cidade, nome, cnpj, ie, telefone, endereco, ativa) values ('2', '2', 'Filial 01', '222222-22', '222', '(22)2222-2222', 'bbbbbbb', true);
+insert into filial (id_locadora, id_cidade, nome, cnpj, ie, telefone, endereco, ativa) values ('3', '3', 'Filial 01', '333333-33', '333', '(33)3333-3333', 'cccccccccc', true);
+
+/* Inserts VEICULO */
+INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor, ativo) VALUES ('AAA111AAA111', '1', '1', '1', 'AAA-1111', '167000', 'PRATA', '', '70.00', true);
+INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor, ativo) VALUES ('BBB222BBB222', '1', '2', '1', 'BBB-2222', '127000', 'VERMELHO', '', '75.00', true);
+INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor, ativo) VALUES ('CCC333CCC333', '1', '6', '2', 'CCC-3333', '35000', 'BRANCO', '', '85.00', true);
+INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor, ativo) VALUES ('AAA222AAA222', '2', '1', '1', 'AAA-2222', '167000', 'PRATA', '', '70.00', true);
+INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor, ativo) VALUES ('BBB333BBB333', '2', '2', '1', 'BBB-3333', '127000', 'VERMELHO', '', '75.00', true);
+INSERT INTO veiculo (chassi, id_filial, id_modelo, id_acessorio, placa, km, cor, imagem, valor, ativo) VALUES ('CCC444CCC444', '3', '6', '2', 'CCC-4444', '35000', 'BRANCO', '', '85.00', true);
+
+/* Inserts CLIENTE */
+insert into cliente (nome, email, senha, telefone) values ('Roger', 'roger@a.com', '1234', '12345678');
+insert into cliente (nome, email, senha, telefone) values ('Empresa 01', 'empresa01@a.com', '4321', '222222222');
+
+/* Inserts CLIENTE - FÍSICO */
+insert into pessoa_fisica (id_cliente, sobrenome, cpf, habilitacao, dt_nascimento, sexo) values ('1', 'Cascaes', '11111111', '12345678910', '14-04-1994', 'M');
+
+/* Inserts CLIENTE - JURÍDICO */
+insert into pessoa_juridica (id_cliente, cnpj, ie) values ('2', '2222222-22', '2222');
+
