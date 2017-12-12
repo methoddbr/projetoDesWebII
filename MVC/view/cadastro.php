@@ -102,20 +102,20 @@
 			<form name="cadastroJuridico" action="../model/cadastroJuridico.php" method="POST">
 				</br></br>
 				<label for="nome">Razão social:</label>
-				<input id="nome" type="text" name="nome" autofocus required size="20">
+				<input id="nome" type="text" name="nome" autofocus required size="30">
 				</br></br>
 				<label for="cnpj">CNPJ:</label>
-				<input id="cnpj" type="text" name="cnpj">
+				<input id="cnpj" type="text" name="cnpj" autofocus required pattern="^(\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2})$">
 				<label for="ie">Inscrição Estadual:</label>
-				<input id="ie" type="text" name="ie">
+				<input id="ie" type="text" name="ie" autofocus required pattern="[^a-z][0-9]{7,15}$">
 				</br></br>
 				<label for="email">Email:</label>
-				<input id="email" type="text" name="email">
+				<input id="email" type="email" name="email">
 				<label for="senha">Senha:</label>
-				<input id="senha" type="password" name="senha">
+				<input id="senha" type="password" name="senha" autofocus required size="15">
 				</br></br>
 				<label for="telefone">Telefone:</label>
-				<input id="telefone" type="text" name="telefone">
+				<input id="telefone" type="text" name="telefone" autofocus required pattern="^\(?\d{2}\)?[\s-]?[\s9]?\d{4}-?\d{4}$">
 				</br></br>
 				<button name="cadastrar" class="enviar" type="submit">Cadastrar</button>
 			</form>
@@ -126,20 +126,20 @@
 			<form name="cadastroLocadora" action="../model/cadastroLocadora.php" method="POST">
 				</br></br>
 				<label for="nome">Razão social:</label>
-				<input id="nome" type="text" name="nomeLocadora" autofocus required size="20">
+				<input id="nome" type="text" name="nomeLocadora" autofocus required size="30">
 				</br></br>
 				<label for="cnpj">CNPJ:</label>
-				<input id="cnpj" type="text" name="cnpj">
+				<input id="cnpj" type="text" name="cnpj" autofocus required pattern="^(\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2})$">
 				<label for="ie">Inscrição Estadual:</label>
-				<input id="ie" type="text" name="ie">
+				<input id="ie" type="text" name="ie" autofocus required pattern="[^a-z][0-9]{7,15}$">
 				</br></br>
 				<label for="email">Email:</label>
-				<input id="email" type="text" name="email">
+				<input id="email" type="email" name="email">
 				<label for="senha">Senha:</label>
-				<input id="senha" type="password" name="senha">
+				<input id="senha" type="password" name="senha" autofocus required size="15">
 				</br></br>
 				<label for="telefone">Telefone:</label>
-				<input id="telefone" type="text" name="telefone">
+				<input id="telefone" type="text" name="telefone" autofocus required pattern="^\(?\d{2}\)?[\s-]?[\s9]?\d{4}-?\d{4}$">
 
 				<?php
 					$query = "SELECT id_cidade, descricao FROM cidade";
@@ -160,7 +160,7 @@
 				</br></br>
 
 				<label for="endereco">Endereço:</label>
-				<input id="endereco" type="text" name="endereco">
+				<input id="endereco" type="text" name="endereco" autofocus required size="60">
 				</br></br>
 				<button name="cadastrar" class="enviar" type="submit">Cadastrar</button>
 			</form>
