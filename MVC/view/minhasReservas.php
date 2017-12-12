@@ -48,9 +48,9 @@
 				<td><?php echo $telefone; ?></td>
 				<?php 
 					if ($ativa){ ?> 
-						<td style="color: green;">Ativa</td> <?php 
+						<td style="color: green;">Aberta</td> <?php 
 					} else { ?> 
-				 		<td style="color: red;">Inativa</td> <?php 
+				 		<td style="color: red;">Fechada</td> <?php 
 				 	} 
 				?>
 			</tr>
