@@ -10,7 +10,7 @@
 	$ie = $_POST['ie'];
 	$endereco = $_POST['endereco'];
 
-	$inserir = "INSERT INTO locadora (nome) VALUES ('$nomeLocadora')";
+	$inserir = "INSERT INTO locadora (nome, email, senha) VALUES ('$nomeLocadora', '$email', '$senha')";
 	$executar = mysqli_query($conn, $inserir);
 
 	$idLocadora = "SELECT id_locadora from locadora where nome = '$nomeLocadora'";
@@ -21,7 +21,7 @@
 		$id = $linha[0];
 
 
-	$inserir2 = "INSERT INTO filial (id_locadora, id_cidade, cnpj, ie, email, senha, telefone, endereco) VALUES ('$id', '$cidade', '$cnpj', '$ie', '$email', '$senha', '$telefone', '$endereco')";
+	$inserir2 = "INSERT INTO filial (id_locadora, id_cidade, nome, cnpj, ie, telefone, endereco, ativa) VALUES ('$id', '$cidade', '$nomeLocadora', '$cnpj', '$ie', '$telefone', '$endereco', 1)";
 
 	$executar2 = mysqli_query($conn, $inserir2);
 
