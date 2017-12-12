@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Motor - index</title>
+	<title>Motor - busca</title>
 </head>
 <body>
 	<?php include ("menu.php"); ?>
@@ -54,7 +54,7 @@
 			$chassi = $linha[8];
 	?>
 			<tr align = "center" >
-				<td><a href="veiculo.php?id=<?php echo $chassi; ?>"><?php echo $modelo; ?></a></td>
+				<td><a href="detalhesVeiculo.php?id=<?php echo $chassi; ?>"><?php echo $modelo; ?></a></td>
 				<td><?php echo $marca; ?></td>
 				<td><?php echo $cor; ?></td>
 				<td><?php echo $ano; ?></td>

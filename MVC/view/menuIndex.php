@@ -10,9 +10,13 @@
 	else {
 		if ($_SESSION["locadora"] == TRUE) {
 ?>
-			[ <a href="">Filiais</a>
-			<a href="">Veículos</a> ]
+			[ <a href="view/filiais.php">Filiais</a>
+			<a href="view/veiculos.php">Veículos</a> ]
 <?php		
+		} else {
+?>			
+			[ <a href="view/minhasReservas.php">Minhas Reservas</a> ]
+<?php
 		}
 		echo " - Bem-vindo " . $_SESSION["user"] . " - ";
 ?>

@@ -5,7 +5,7 @@
 	$user = $_POST['user'];
 	$senha = $_POST['senha'];
 
-	$consultar = "select email, senha, nome from cliente";
+	$consultar = "select email, senha, nome, id_cliente from cliente";
 	$executar = mysqli_query($conn, $consultar);
 
 	$encontrou = false;
@@ -17,6 +17,7 @@
 			$_SESSION["logado"] = TRUE;
 			$_SESSION["locadora"] = false;
 			$_SESSION["user"] = $linha[2];
+			$_SESSION["idCliente"] = $linha[3];
 			$pg = $_SESSION["pagina"];
 			if (isset($_SESSION["pagina"])) {
 				header("Location: $pg");
