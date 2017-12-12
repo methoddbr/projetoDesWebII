@@ -117,13 +117,11 @@ CREATE TABLE Veiculo (
 	FOREIGN KEY (id_acessorio) REFERENCES Acessorios (id_acessorio)
 );
 
-CREATE TABLE aluga_Reserva (
+CREATE TABLE Reserva (
 	id_reserva INTEGER NOT NULL AUTO_INCREMENT,
 	id_cliente INTEGER NOT NULL,
 	chassi VARCHAR(17) NOT NULL,
-	dt_entrega VARCHAR(10) NOT NULL,
-	dt_retirada VARCHAR(10) NOT NULL,
-	valor DECIMAL(8,2) NOT NULL,
+	ativa BIT NOT NULL,
 	PRIMARY KEY (id_reserva),
 	FOREIGN KEY(id_cliente) REFERENCES Cliente (id_cliente),
 	FOREIGN KEY(chassi) REFERENCES Veiculo (chassi)
