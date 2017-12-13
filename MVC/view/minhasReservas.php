@@ -26,7 +26,7 @@
 							inner join filial F on V.id_filial = F.id_filial
 							inner join locadora L on F.id_locadora = L.id_locadora
 							inner join cidade C on F.id_cidade = C.id_cidade
-					  	where R.id_cliente = '$idCliente'";
+					  	where R.id_cliente = '$idCliente' order by R.id_reserva desc";
 		$executar = mysqli_query($conn, $consultar);
 		while ($linha = mysqli_fetch_array($executar, MYSQLI_BOTH)) {
 			$modelo = $linha[0];
