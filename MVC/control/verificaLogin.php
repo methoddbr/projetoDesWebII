@@ -27,7 +27,7 @@
 		}
 	}
 
-	$consultar2 = "select email, senha, nome from locadora";
+	$consultar2 = "select email, senha, nome, id_locadora from locadora";
 	$executar2 = mysqli_query($conn, $consultar2);
 
 	while ($linha = mysqli_fetch_array($executar2, MYSQLI_BOTH)) {
@@ -38,6 +38,7 @@
 			$_SESSION["logado"] = TRUE;
 			$_SESSION["locadora"] = true;
 			$_SESSION["user"] = $linha[2];
+			$_SESSION["idLocadora"] = $linha[3];
 			$pg = $_SESSION["pagina"];
 			if (isset($_SESSION["pagina"])) {
 				header("Location: $pg");
