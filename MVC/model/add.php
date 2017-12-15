@@ -21,7 +21,7 @@ if(isset($_POST['send'])){
 		}
 	}
 
-	$inserir = "INSERT INTO filial (id_locadora, id_cidade, nome, cnpj, ie, telefone, endereco, ativa) VALUES ('$idlocadora', '$idcidade', '$nome', '$cnpj', '$ie', '$telefone', '$endereco', 1);";
+	$inserir = "INSERT INTO filial (id_locadora, id_cidade, nome, cnpj, ie, telefone, endereco, ativa) VALUES ('$idlocadora', '$cidade', '$nome', '$cnpj', '$ie', '$telefone', '$endereco', 1);";
 
 	$executar = mysqli_query($conn, $inserir);
 

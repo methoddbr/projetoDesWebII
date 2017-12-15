@@ -54,7 +54,23 @@ $rows = $db->query($sql);
 	          <label>Nome</label>
 	          <input type="text" required name="nome" class="form-control">
 	          <label>Cidade</label>
-	          <input type="text" required name="cidade" class="form-control">
+	          <?php
+					$query = "SELECT id_cidade, descricao FROM cidade";
+					$executar = mysqli_query($conn, $query);
+				?>
+
+				<select name="cidade" class="form-control">
+					<?php
+					 	while($cidade = mysqli_fetch_array($executar)) { 
+					?>
+ 							<option value="<?php echo $cidade['id_cidade'] ?>"> 
+ 								<?php echo $cidade['descricao'] ?>
+ 							</option>
+ 					<?php 
+ 						} 
+ 					?>
+				</select>  
+	          <!-- <input type="text" required name="cidade" class="form-control"> -->
 	          <label>Inscrição Estadual</label>
 	          <input type="text" required name="ie" class="form-control">
 	          <label>Telefone</label>
@@ -84,7 +100,7 @@ $rows = $db->query($sql);
 			<th><?php echo $row['id_filial']; ?></th>
 			<td class="col-md-10"><?php echo $row['nome']; ?></td>
 			<td class="col-md-10"><?php echo $row['cnpj']; ?></td>
-			<td><a href="../model/update.php?id=<?php echo $row['id_filial'];?>" class ="btn btn-success">Edit</a></td>
+			<!-- <td><a href="../model/update.php?id=<?php echo $row['id_filial'];?>" class ="btn btn-success">Edit</a></td> -->
 			<td><a href="../model/delete.php?id=<?php echo $row['id_filial'];?>" class ="btn btn-danger">Delete</a></td>
 		</tr>
 		<?php } ?>
