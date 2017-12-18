@@ -26,6 +26,8 @@
 	$executar2 = mysqli_query($conn, $inserir2);
 
 	if ($executar && $executar2){
-		echo "Inserido com sucesso.";
-	} 
+		header('Location: ../view/login.php');
+	} else {
+		header('Location: ../view/cadastro.php');
+	}
 ?>
