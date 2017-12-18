@@ -13,6 +13,10 @@
 			[ <a href="filiais.php">Filiais</a>
 			<a href="veiculos.php">Veículos</a> ]
 <?php		
+		} else {
+?>			
+			[ <a href="minhasReservas.php">Minhas Reservas</a> ]
+<?php
 		}
 		echo " - Bem-vindo " . $_SESSION["user"] . " - ";
 ?>

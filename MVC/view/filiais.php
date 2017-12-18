@@ -1,6 +1,4 @@
-<?php 
-include ("../model/conexao.php");	
-?>
+<?php include ("../model/conexao.php");	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,21 +7,21 @@ include ("../model/conexao.php");
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>Motor - Filiais</title>
 </head>
-<?php
-$page = (isset($_GET['page'])?$_GET['page']:1);
-$perPage = (isset($_GET['perPage']) && ($_GET['perPage'])<=50 ? $_GET['perPage'] : 5);
-$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
-$id=$_COOKIE["usuario"];
-$sql = "select * from filial where id_locadora='$id' limit ".$start.",".$perPage." ";
-$total = $db->query("select * from filial")->num_rows;
-$pages = ceil($total / $perPage);
-$rows = $db->query($sql);
-?>
 
 <body>
 <!-- INSERE O TOP MENU  -->
 <?php include ("../view/menu.php"); ?>
 
+<?php
+$id = $_SESSION["idLocadora"];
+$page = (isset($_GET['page'])?$_GET['page']:1);
+$perPage = (isset($_GET['perPage']) && ($_GET['perPage'])<=50 ? $_GET['perPage'] : 5);
+$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+$sql = "select * from filial where id_locadora='$id' limit ".$start.",".$perPage." ";
+$total = $db->query("select * from filial")->num_rows;
+$pages = ceil($total / $perPage);
+$rows = $db->query($sql);
+?>
 <!-- INICIA O CADASTRO DE FILIAIS -->
 <div class="container">
 	<div class="row" style="margin-top: 70px;">
@@ -113,8 +111,6 @@ $rows = $db->query($sql);
 	<?php }?>
 	</ul>
 	</center>
-	</div>
-	</div>
 </div>
 </body>
 </html>
